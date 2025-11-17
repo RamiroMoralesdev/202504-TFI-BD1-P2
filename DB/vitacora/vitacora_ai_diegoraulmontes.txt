@@ -1,0 +1,64 @@
+VITÁCORA DE TRABAJO CON IA
+Registro de Interacciones
+Fecha: [28/9/25] - Hora: 17:30
+
+Pregunta a la IA: "¿Cuál es la mejor forma de implementar una relación 1→1 en MySQL: clave foránea única o clave primaria compartida?"
+
+Respuesta de la IA: La IA explicó las ventajas de cada enfoque, destacando que la FK única ofrece más flexibilidad para cambios futuros, mientras que la PK compartida puede ser ligeramente más eficiente en algunas consultas.
+
+Acción tomada: Decidí implementar la relación usando FK única en la tabla código_barras porque priorizo la mantenibilidad sobre micro-optimizaciones.
+
+Archivo asociado: create_tables.sql
+
+Fecha: [28/9/25] - Hora: 17:45
+
+Pregunta a la IA: "¿Cómo puedo generar eficientemente 10,000 registros de prueba usando solo SQL en MySQL?"
+
+Respuesta de la IA: La IA sugirió usar combinaciones CROSS JOIN de tablas numéricas y funciones como RAND(), CONCAT() y ELT() para generar datos variados.
+
+Acción tomada: Implementé la estrategia sugerida pero ajusté los rangos de precios y categorías para que sean más realistas para nuestro dominio de productos.
+
+Archivo asociado: insert_data.sql
+
+Fecha: [28/9/25] - Hora: 18:02
+
+Pregunta a la IA: "¿Qué tablas adicionales debo incluir para preparar la implementación de seguridad en etapas posteriores?"
+
+Respuesta de la IA: La IA recomendó las tablas usuario, rol y usuario_rol, con los campos esenciales para autenticación y autorización básica.
+
+Acción tomada: Seguí la recomendación pero agregué el campo "eliminado" para consistencia con nuestro patrón de baja lógica.
+
+Archivo asociado: create_tables.sql
+
+Fecha: [28/9/25] - Hora: 19:45
+
+Pregunta a la IA: "Mi compañero sugirió cambiar el diseño de usuario-rol a una FK directa en lugar de tabla intermedia. ¿Es mejor para nuestro proyecto?"
+
+Respuesta de la IA: "Sí, para proyectos académicos y aplicaciones donde un usuario generalmente tiene un rol principal, la FK directa es más simple y eficiente."
+
+Acción tomada: Implementé el cambio eliminando usuario_rol y agregando rol_id directo en usuario, simplificando el modelo.
+
+Archivo asociado: create_tables.sql
+
+Fecha: [28/9/25] - Hora: 20:55
+
+Pregunta a la IA: "¿Cómo garantizar correctamente una relación 1:1 en el diagrama ER y en la implementación SQL?"
+
+Respuesta de la IA: La IA explicó que se debe usar UNIQUE constraint en la FK y mostró cómo representarlo correctamente en diagramas.
+
+Acción tomada: Corregí el diagrama ER y agregué UNIQUE explícito en producto_id de código_barras.
+
+Archivo asociado: create_tables.sql, diagrama_erd.png
+
+
+EVIDENCIA DE USO DE IA
+Fragmentos de Interacción
+Consulta sobre modelado 1→1: "La IA me ayudó a entender las implicaciones de diseño entre FK única vs PK compartida, permitiéndome tomar una decisión fundamentada."
+
+Estrategia de datos masivos: "Seguí las sugerencias de la IA sobre el uso de CROSS JOIN con tablas numéricas para generar secuencias, adaptándolo a nuestro dominio específico."
+
+Preparación para seguridad: "La IA me orientó sobre las tablas mínimas necesarias para implementar un sistema de roles y permisos."
+
+Optimización de diseño: "La IA validó la sugerencia de mi compañero sobre simplificar la relación usuario-rol, confirmando que era la mejor opción para nuestro proyecto."
+
+Verificación de relaciones: "La IA me ayudó a corregir y garantizar la correcta implementación de la relación 1:1 en el diagrama ER."

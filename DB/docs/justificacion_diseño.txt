@@ -1,0 +1,22 @@
+PREGUNTAS Y DECISIONES DE DISEÑO
+Elección de Implementación 1→1
+Tuve dudas sobre si usar FK única o PK compartida para la relación Producto → CódigoBarras. Después de investigar y consultar con la IA, opté por la FK única porque:
+
+Permite que un producto pueda no tener código de barras inicialmente
+
+Facilita migraciones futuras si la relación cambia a 1-a-muchos
+
+Mantiene la independencia de los IDs de cada entidad
+
+Es más flexible para modificaciones del esquema
+
+Inclusión de Tablas de Usuarios/Roles
+Decidí incluir estas tablas desde el inicio aunque corresponden a etapas posteriores porque:
+
+Evita modificaciones del esquema en medio del desarrollo
+
+Permite a mi compañero trabajar inmediatamente en la implementación de seguridad
+
+Sigue el principio de diseño anticipatorio
+
+Después de la sugerencia de mi compañero, simplifiqué el diseño a relación directa usuario-rol
